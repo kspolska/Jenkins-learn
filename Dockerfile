@@ -1,6 +1,6 @@
-FROM python:3
+FROM ubuntu:18.04
 
-WORKDIR /usr/src/app
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
   apt-get install -y gcc python-dev libkrb5-dev && \
@@ -12,6 +12,3 @@ RUN apt-get update && \
   pip3 install pywinrm && \
   pip3 install ansible
 
-COPY . .
-
-CMD [ "python", "./your-daemon-or-script.py" ]
