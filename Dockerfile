@@ -2,7 +2,8 @@ FROM ubuntu:18.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && \
+RUN export LC_CTYPE=en_US.UTF-8 && \
+  apt-get update && \
   apt-get install -y gcc python-dev libkrb5-dev && \
   apt-get install python3-pip -y && \
   pip3 install --upgrade pip && \
