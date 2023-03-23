@@ -11,4 +11,3 @@ RUN apt-get update && \
   apt install krb5-user -y && \ 
   pip3 install pywinrm && \
   pip3 install ansible
-
