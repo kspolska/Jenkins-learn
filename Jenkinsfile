@@ -4,6 +4,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'python --version'
+                sh 'whoami'
                 sh 'ansible --version'
             }
         }
