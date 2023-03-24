@@ -10,4 +10,4 @@ RUN pip install ansible
 
 
 
-CMD [ "ansible", "--version"]
+CMD ["/bin/bash"]
