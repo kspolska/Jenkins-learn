@@ -1,14 +1,10 @@
-FROM ubuntu:18.04
+FROM python
 
-ENV DEBIAN_FRONTEND=noninteractive
+WORKDIR /usr/src/app
 
-RUN export LC_CTYPE=en_US.UTF-8 && \
-  apt-get update && \
-  apt-get install -y gcc python-dev libkrb5-dev && \
-  apt-get install python3-pip -y && \
-  pip3 install --upgrade pip && \
-  pip3 install --upgrade virtualenv && \
-  pip3 install pywinrm[kerberos] && \
-  apt install krb5-user -y && \ 
-  pip3 install pywinrm && \
-  pip3 install ansible
+COPY . .
+
+RUN pip install ansible
+
+
+CMD [ "ansible", "--version"]
